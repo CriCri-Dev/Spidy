@@ -2,6 +2,7 @@ services:
   - type: web
     name: spidy
     runtime: docker
+    plan: free
     dockerfilePath: ./dockerfile
     healthCheckPath: /up
     autoDeployTrigger: commit

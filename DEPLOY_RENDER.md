@@ -51,6 +51,7 @@ git push origin main
 
 El puerto `4000`, el controlador MySQL y la ruta del certificado TLS ya están definidos.
 Si el cuadro **Connect** de tu instancia muestra otro puerto, cambia `DB_PORT` en Render.
+El Blueprint fija `plan: free`, por lo que no debe crear una instancia Starter de pago.
 
 ## 5. Verificar
 
