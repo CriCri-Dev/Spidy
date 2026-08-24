@@ -8,7 +8,11 @@
   "routes": [
     {
       "src": "/build/(.*)",
-      "dest": "/public/build/$1"
+      "dest": "/dist/build/$1"
+    },
+    {
+      "src": "/(.*\\.(?:css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2|webp))$",
+      "dest": "/dist/$1"
     },
     {
       "src": "/(.*)",
