@@ -36,7 +36,7 @@ return [
     ],
 
     'rsvp' => [
-        'admin_key' => env('RSVP_ADMIN_KEY', 'CRIS-PARKER-23'),
+        'admin_key' => env('RSVP_ADMIN_KEY'),
     ],
 
 ];
