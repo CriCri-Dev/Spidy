@@ -20,6 +20,7 @@
     @media(max-width:700px){.host{display:block;width:min(88vw,340px);margin:28px auto 34px;transform:rotate(1deg);box-shadow:8px 8px rgba(0,0,0,.4)}.host:hover,.host:focus-visible{transform:rotate(0) scale(1.015);box-shadow:9px 9px rgba(237,32,49,.48)}.host img{aspect-ratio:1;object-fit:cover;object-position:72% 58%}.host-caption{padding-inline:7px;gap:10px}.host-caption span{white-space:nowrap}}
     @media(max-width:360px){.host{width:calc(100% - 28px)}.host-caption{font-size:1.08rem}.host-caption span{font-size:1.45rem}}
     .confirm-section:before{display:none}.confirm-corner-web{position:absolute;z-index:1;width:min(46vw,520px);height:auto;pointer-events:none;filter:drop-shadow(0 0 3px rgba(184,225,255,.2))}.confirm-corner-web-top{top:0;right:0}.confirm-corner-web-bottom{bottom:-45px;left:-35px;width:min(32vw,360px);opacity:.42;transform:rotate(180deg)}.confirm-corner-web .web-main{stroke-width:1.15;opacity:.34}.confirm-corner-web .web-fine{stroke-width:.65;opacity:.24}.confirm-corner-web .web-glint{opacity:.65}@media(max-width:700px){.confirm-section{background:linear-gradient(180deg,#0c2740 0,#091a2d 36%,#091a2d 100%)}.confirm-corner-web-top{right:-42px;width:300px;opacity:.72;mask-image:linear-gradient(#000 0 65%,transparent 100%);-webkit-mask-image:linear-gradient(#000 0 65%,transparent 100%)}.confirm-corner-web-bottom{bottom:-38px;left:-70px;width:250px;opacity:.34}.confirm-box>div{position:relative;padding-right:24%}.confirm-box h2{position:relative;z-index:1}.deadline{position:relative;z-index:1}}@media(max-width:380px){.confirm-box>div{padding-right:15%}.confirm-corner-web-top{right:-58px;width:270px}.confirm-corner-web-bottom{left:-82px;width:230px}}
+    .form{position:relative;border-top:4px solid var(--red);border-left:1px solid #9bc9df;background:linear-gradient(135deg,rgba(126,207,239,.13) 0 1px,transparent 1px 18px),var(--paper);box-shadow:8px 8px var(--red),inset 4px 0 #0a5d99}.form:before{content:"RSVP // SISTEMA DE MISIÓN";display:block;margin:-10px 0 20px;padding:8px 10px;border-bottom:1px solid #b7d1e1;color:#0a5d99;font-size:.55rem;font-weight:800;letter-spacing:.14em}.field>label,.legend{color:#0b4e78}.field input,.field textarea{border:1px solid #a9c9da;border-left:3px solid #6bb7db;background:rgba(255,255,255,.94);transition:border-color .18s,box-shadow .18s,background .18s}.field input:focus,.field textarea:focus{border-color:#0a75aa;border-left-color:var(--red);outline:0;background:#fff;box-shadow:0 0 0 3px rgba(10,117,170,.14)}.choice{position:relative;border:1px solid #a9c9da;border-left:3px solid #6bb7db;cursor:pointer;transition:border-color .18s,background .18s,color .18s,transform .18s}.choice:hover{border-color:#0a75aa;background:#eef8fc}.choice:has(input:checked){border-color:var(--red);border-left-color:var(--red);background:#fff0f1;color:#9e1421;box-shadow:inset 0 0 0 1px rgba(237,32,49,.12)}.choice input{accent-color:var(--red)}.submit{position:relative;box-shadow:4px 4px #071321;transition:transform .15s,box-shadow .15s,background .15s}.submit:hover{background:#ca1424}.submit:active{transform:translate(3px,3px);box-shadow:1px 1px #071321}.music-toggle{width:48px;height:48px;min-height:48px;justify-content:center;gap:0;padding:0;border:1px solid #74ccef;background:rgba(7,24,39,.94);font-size:1.25rem;line-height:1;box-shadow:3px 3px var(--red);backdrop-filter:blur(8px);transition:transform .18s,background .18s,box-shadow .18s}.music-toggle:hover{transform:translateY(-2px);background:#0b2c45;box-shadow:3px 5px var(--red)}.music-toggle:active{transform:translate(2px,2px);box-shadow:1px 1px var(--red)}.music-toggle[aria-pressed="true"]{background:#0a5d99;box-shadow:0 0 0 2px #071827,0 0 0 4px var(--red)}#musicLabel{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}@media(max-width:700px){.form{box-shadow:6px 6px var(--red),inset 3px 0 #0a5d99}.form:before{margin-top:-7px}.music-toggle{right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));width:46px;height:46px;padding:0}}
   </style>
 </head>
 <body>
@@ -91,7 +92,7 @@
   </div></section>
   <div class="symbiote-layer" aria-hidden="true"></div><div class="symbiote-toast" id="symbioteToast" role="status"></div>
   <audio id="ambientMusic" src="{{ route('event.music') }}" loop preload="metadata"></audio>
-  <button class="music-toggle" id="musicToggle" type="button" aria-pressed="false"><span id="musicIcon">♪</span><span id="musicLabel">ACTIVAR MÚSICA</span></button>
+  <button class="music-toggle" id="musicToggle" type="button" aria-pressed="false" aria-label="Activar música" title="Activar música"><span id="musicIcon" aria-hidden="true">♪</span><span id="musicLabel">ACTIVAR MÚSICA</span></button>
 
   <div class="overlay @if(session('confirmed')) show @endif" id="successOverlay" role="dialog" aria-modal="true" aria-labelledby="successTitle">
     <div class="mission-modal"><img class="success-logo" src="{{ route('event.image','logo') }}" alt="Logo de araña"><h2 id="successTitle">¡MISIÓN ACEPTADA!</h2><p>Tu respuesta quedó registrada en el sistema. Cris ha recibido tu transmisión.</p><button type="button" data-close="successOverlay">CONTINUAR LA MISIÓN</button></div>
@@ -139,6 +140,8 @@
           music.volume = 1;
           await music.play();
           musicToggle.setAttribute('aria-pressed', 'true');
+          musicToggle.setAttribute('aria-label', 'Pausar música');
+          musicToggle.title = 'Pausar música';
           document.querySelector('#musicIcon').textContent = '♫';
           document.querySelector('#musicLabel').textContent = 'PAUSAR MÚSICA';
         } catch (error) {
@@ -147,6 +150,8 @@
       } else {
         music.pause();
         musicToggle.setAttribute('aria-pressed', 'false');
+        musicToggle.setAttribute('aria-label', 'Activar música');
+        musicToggle.title = 'Activar música';
         document.querySelector('#musicIcon').textContent = '♪';
         document.querySelector('#musicLabel').textContent = 'ACTIVAR MÚSICA';
       }
