@@ -17,4 +17,24 @@ class ExampleTest extends TestCase
         $response->assertStatus(200);
     }
 
+    public function test_forms_use_https_behind_the_render_proxy(): void
+    {
+        $proxyHeaders = [
+            'X-Forwarded-For' => '203.0.113.10',
+            'X-Forwarded-Port' => '443',
+            'X-Forwarded-Proto' => 'https',
+        ];
+
+        $this->withServerVariables(['REMOTE_ADDR' => '10.0.0.10'])
+            ->withHeaders($proxyHeaders)
+            ->get('/')
+            ->assertOk()
+            ->assertSee('action="https://localhost/confirmacion"', false);
+
+        $this->withServerVariables(['REMOTE_ADDR' => '10.0.0.10'])
+            ->withHeaders($proxyHeaders)
+            ->get('/protocolo-traje')
+            ->assertOk()
+            ->assertSee('action="https://localhost/protocolo-traje"', false);
+    }
 }
