@@ -17,6 +17,9 @@
     @media(max-width:900px){.copy{width:62%}.host{right:4%;width:220px;min-width:0}.confirm-box{gap:30px}.mission-grid{gap:32px}.menu-card h2{font-size:2.7rem}}
     @media(max-width:700px){body{min-width:0}.hero{background-position:64% center}.nav{padding:16px 5%}.nav a{min-height:44px;display:flex;align-items:center}.wrap{padding:42px 5% 24px}.copy{width:100%}.eyebrow{margin-bottom:18px}h1{font-size:clamp(4rem,20vw,5.4rem);line-height:.76}.copy>p:not(.eyebrow):not(.pozole){max-width:100%;margin:24px 0 13px;font-size:.84rem}.pozole{max-width:100%;margin-bottom:22px!important;font-size:1rem!important}.actions,.actions .button{width:100%}.actions .button{display:flex;align-items:center;justify-content:center;min-height:48px}.host{position:relative;inset:auto;width:min(72vw,280px);margin:24px 7% 30px auto;padding:7px}.host img{height:auto;aspect-ratio:4/5}.host-caption{font-size:1.2rem}.details{grid-template-columns:1fr 1fr;padding:15px 5%;gap:7px 12px}.detail:first-child{grid-column:1/-1;padding-bottom:9px;border-bottom:1px solid rgba(198,229,255,.2)}.detail b{font-size:.68rem}.detail span{font-size:.49rem}.mission-grid{grid-template-columns:1fr;gap:42px}.mission-section{padding:52px 5% 58px}.hud{padding:20px 14px}.hud-label{line-height:1.5}.countdown{grid-template-columns:1fr 1fr;gap:7px}.time-unit{padding:13px 4px}.time-unit b{font-size:2rem}.menu-card{margin-right:7px;padding:27px 22px 22px;transform:none;box-shadow:7px 7px var(--red)}.menu-card h2{font-size:2.7rem}.menu-item{font-size:.71rem}.confirm-section{padding:54px 5% 66px}.confirm-box{grid-template-columns:1fr;gap:26px}.confirm-box h2{font-size:3.4rem}.confirm-box>div>p{max-width:95%}.form{width:100%;padding:19px 16px;box-shadow:6px 6px var(--red)}.choices,.split{grid-template-columns:1fr;gap:0}.choices{gap:8px}.choice{min-height:46px}.field{margin-bottom:15px}.field input,.field textarea{min-height:46px;font-size:16px}.field textarea{min-height:90px}.submit{min-height:50px}.privacy{line-height:1.55!important}.music-toggle{right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));padding:10px 12px}.mission-modal{padding:28px 18px}.mission-modal h2,.secret-modal h2{font-size:3rem}.success-logo{width:118px;height:132px}}
     @media(max-width:360px){.brand{font-size:1.18rem}.nav a{padding:10px 8px;font-size:.55rem}h1{font-size:3.85rem}.countdown{grid-template-columns:1fr 1fr}.menu-item{align-items:flex-start;flex-direction:column;gap:3px}.menu-item span:last-child{text-align:left}.music-toggle #musicLabel{display:none}.music-toggle{width:46px;justify-content:center;padding:8px}.mission-modal h2,.secret-modal h2{font-size:2.55rem}.secret-code{font-size:.72rem}}
+    @media(max-width:700px){.host{display:block;width:min(88vw,340px);margin:28px auto 34px;transform:rotate(1deg);box-shadow:8px 8px rgba(0,0,0,.4)}.host:hover,.host:focus-visible{transform:rotate(0) scale(1.015);box-shadow:9px 9px rgba(237,32,49,.48)}.host img{aspect-ratio:1;object-fit:cover;object-position:72% 58%}.host-caption{padding-inline:7px;gap:10px}.host-caption span{white-space:nowrap}}
+    @media(max-width:360px){.host{width:calc(100% - 28px)}.host-caption{font-size:1.08rem}.host-caption span{font-size:1.45rem}}
+    .confirm-section:before{display:none}.confirm-corner-web{position:absolute;z-index:1;width:min(46vw,520px);height:auto;pointer-events:none;filter:drop-shadow(0 0 3px rgba(184,225,255,.2))}.confirm-corner-web-top{top:0;right:0}.confirm-corner-web-bottom{bottom:-45px;left:-35px;width:min(32vw,360px);opacity:.42;transform:rotate(180deg)}.confirm-corner-web .web-main{stroke-width:1.15;opacity:.34}.confirm-corner-web .web-fine{stroke-width:.65;opacity:.24}.confirm-corner-web .web-glint{opacity:.65}@media(max-width:700px){.confirm-section{background:linear-gradient(180deg,#0c2740 0,#091a2d 36%,#091a2d 100%)}.confirm-corner-web-top{right:-42px;width:300px;opacity:.72;mask-image:linear-gradient(#000 0 65%,transparent 100%);-webkit-mask-image:linear-gradient(#000 0 65%,transparent 100%)}.confirm-corner-web-bottom{bottom:-38px;left:-70px;width:250px;opacity:.34}.confirm-box>div{position:relative;padding-right:24%}.confirm-box h2{position:relative;z-index:1}.deadline{position:relative;z-index:1}}@media(max-width:380px){.confirm-box>div{padding-right:15%}.confirm-corner-web-top{right:-58px;width:270px}.confirm-corner-web-bottom{left:-82px;width:230px}}
   </style>
 </head>
 <body>
@@ -50,17 +53,30 @@
     </div>
   </section>
   <section class="confirm-section" id="confirmar">
-    <svg class="confirm-webs" viewBox="0 0 1440 650" preserveAspectRatio="none" aria-hidden="true">
-      <g transform="translate(0 650) scale(1 -1)">
-        <g class="strand strong"><path d="M0 0 C76 65 146 127 250 213 M0 0 C38 101 83 201 142 326 M0 0 C132 31 270 58 410 91 M0 0 C211 5 369 9 528 28"/><path d="M45 42 C77 38 108 48 132 70 M84 79 C130 73 174 89 205 121 M132 125 C191 118 241 139 280 181 M185 174 C253 167 315 193 357 242 M244 227 C319 221 388 250 431 303"/></g>
-        <g class="strand soft"><path d="M0 92 C47 70 91 67 132 70 M0 179 C87 136 154 132 205 121 M0 280 C132 207 223 197 280 181 M0 398 C184 286 298 271 357 242"/><path d="M64 0 C58 28 64 51 78 73 M145 0 C132 42 143 80 166 105 M249 0 C229 59 245 111 278 146 M378 0 C349 80 369 149 414 197"/></g>
-        <path class="shine" d="M0 0 C76 65 146 127 250 213 M0 0 C38 101 83 201 142 326"/>
+    <svg class="confirm-corner-web confirm-corner-web-top" viewBox="0 0 552 468" aria-hidden="true">
+      <g transform="translate(552 0) scale(-1 1)">
+        <g class="web web-main">
+          <path d="M0 0 C90 74 167 139 285 215 M0 0 C45 110 93 224 162 345 M0 0 C152 35 293 60 430 91 M0 0 C226 2 388 3 552 20"/>
+          <path d="M43 38 C62 37 82 43 99 55 C111 63 119 75 126 88 M79 71 C111 69 143 80 166 103 C184 121 194 142 198 164 M119 108 C161 105 207 122 238 154 C259 176 271 203 275 230 M160 147 C214 144 270 166 307 204 C334 231 349 264 352 300 M206 190 C267 189 331 214 374 258 C404 289 420 329 422 369"/>
+        </g>
+        <g class="web web-fine">
+          <path d="M0 82 C38 71 72 70 99 74 M0 157 C74 133 130 137 169 154 M0 245 C117 195 206 203 276 231 M0 349 C166 272 280 282 353 301 M0 468 C218 353 340 361 423 370"/>
+          <path d="M20 0 C17 27 25 53 43 76 M83 0 C77 36 84 70 105 99 M167 0 C154 49 165 95 196 130 M275 0 C256 68 268 127 309 177 M404 0 C381 90 395 163 449 217"/>
+        </g>
+        <path class="web-glint" d="M0 0 C90 74 167 139 285 215 M0 0 C45 110 93 224 162 345"/>
       </g>
-      <g class="web-center" transform="translate(1125 -10)">
-        <g class="strand strong"><path d="M0 0 C35 67 75 121 134 179 M0 0 C93 32 168 72 235 126 M0 0 C151 1 259 22 347 55"/><path d="M42 34 C70 26 99 30 121 45 M85 70 C129 58 169 66 200 91 M136 112 C187 98 237 111 274 146"/></g>
-        <g class="strand soft"><path d="M0 70 C42 47 80 40 121 45 M0 151 C83 103 145 89 200 91 M0 245 C129 165 221 142 274 146"/></g>
+    </svg>
+    <svg class="confirm-corner-web confirm-corner-web-bottom" viewBox="0 0 552 468" aria-hidden="true">
+      <g transform="translate(552 0) scale(-1 1)">
+        <g class="web web-main">
+          <path d="M0 0 C90 74 167 139 285 215 M0 0 C45 110 93 224 162 345 M0 0 C152 35 293 60 430 91 M0 0 C226 2 388 3 552 20"/>
+          <path d="M43 38 C62 37 82 43 99 55 C111 63 119 75 126 88 M79 71 C111 69 143 80 166 103 C184 121 194 142 198 164 M119 108 C161 105 207 122 238 154 C259 176 271 203 275 230 M160 147 C214 144 270 166 307 204 C334 231 349 264 352 300 M206 190 C267 189 331 214 374 258 C404 289 420 329 422 369"/>
+        </g>
+        <g class="web web-fine">
+          <path d="M0 82 C38 71 72 70 99 74 M0 157 C74 133 130 137 169 154 M0 245 C117 195 206 203 276 231 M0 349 C166 272 280 282 353 301 M0 468 C218 353 340 361 423 370"/>
+          <path d="M20 0 C17 27 25 53 43 76 M83 0 C77 36 84 70 105 99 M167 0 C154 49 165 95 196 130 M275 0 C256 68 268 127 309 177 M404 0 C381 90 395 163 449 217"/>
+        </g>
       </g>
-      <g class="hanging"><path class="strand strong" d="M925 0 C916 80 936 140 927 218 C922 260 929 297 942 329"/><path class="strand soft" d="M942 329 C928 343 928 361 942 374 C956 360 956 343 942 329Z"/></g>
     </svg>
     <div class="confirm-box">
     <div><h2>CONFIRMA<br>TU MISIÓN</h2><p>Avísale a Cris si formarás parte de esta aventura.</p><p class="deadline">Confirma antes del 28 de agosto</p></div>
